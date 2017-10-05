@@ -1,0 +1,30 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "description": "LambdaSchool pre-work",
+  "main": "functions.js",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "list": "^1.0.0",
+    "tests": "^0.4.2"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter list ./test" //try adding '|| true' to suppress verbose mode. 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d2rd/lambdaSchool.git"
+  },
+  "keywords": [
+    "lambda", "pre-work"
+  ],
+  "author": "Glenn-David Daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d2rd/lambdaSchool/issues"
+  },
+  "homepage": "https://github.com/d2rd/lambdaSchool#readme"
+}
