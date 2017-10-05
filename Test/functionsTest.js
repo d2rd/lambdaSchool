@@ -74,8 +74,8 @@ describe('addItemToArray', function(){
     expect(addItemToArray(arr), ___________);
   });
 
-  it('functions.addItemToArray(arr) should include new element with a value of null', function(){
-    expect(addItemToArray(arr).to..)
-  })
+  // it('functions.addItemToArray(arr) should include new element with a value of null', function(){
+  //   expect(addItemToArray(arr).to..)
+  // })
   });
 
