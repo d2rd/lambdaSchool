@@ -12,7 +12,7 @@
     "mocha": "^4.0.0"
   },
   "scripts": {
-    "test": "mocha --reporter list ./test" //try adding '|| true' to suppress verbose mode. 
+    "test": "mocha --reporter list ./test" 
   },
   "repository": {
     "type": "git",

@@ -25,7 +25,7 @@ describe('functions',function(){
     expect(isInRange('three').to.NaN);
   }),
 
-});
+
 
 //isPrime - Return true if num is prime, otherwise return false.
 describe('functions',function(){
@@ -78,4 +78,4 @@ describe('addItemToArray', function(){
   //   expect(addItemToArray(arr).to..)
   // })
   });
-
+})

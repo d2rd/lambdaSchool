@@ -53,7 +53,7 @@ function addFriend( firstName, secondName ) {
 		}
 	}
 }
-}
+
 addFriend("Samuel","Ralph");
   console.log(userObj);
 
