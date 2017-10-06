@@ -130,26 +130,26 @@ describe('addItemToArray adds an element to the end of "arr" then returns the ar
 */
 
 /* TASKS
-  [x] replace 'functions' module references with 'app'
-  [x] parens are closed before the '.to'
+1.  [x] replace 'functions' module references with 'app'
+2.  [x] parens are closed before the '.to'
 
-  [ ] addItemToArray:  
-      [x] for 'it' statements: replace references to 'functions' with target function name (i.e. 'it('addItemToArray...' instead of 'it(functions...').  
-      [x] store the value of arr.length before running the function.
-      [x] complete test for 'value of null' see comments in functions.js
-      [x] add error message if object type is not an array.
-      [x] remove test command invoking function from finished work.
-      [ ] add new element 'apple' to test array ['coconut', 'peach', 'kiwi']
-      [ ] add new element 'boat' to test array ['car', 'truck', 'motorcycle']  
+3.  [ ] addItemToArray:  
+3a.    [x] for 'it' statements: replace references to 'functions' with target function name (i.e. 'it('addItemToArray...' instead of 'it(functions...').  
+ b.   [x] store the value of arr.length before running the function.
+ c.   [x] complete test for 'value of null' see comments in functions.js
+ d.   [x] add error message if object type is not an array.
+ e.   [x] remove test command invoking function from finished work.
+ f.   [ ] add new element 'apple' to test array ['coconut', 'peach', 'kiwi']
+ g.   [ ] add new element 'boat' to test array ['car', 'truck', 'motorcycle']  
 
-  [ ] isInRange:
-      [x] for 'expect(' statements reference module import by using 'app.isInRange', rather than 'isInRange'.
-      [x] for 'it' statements: replace references to 'functions' with target function names (i.e. 'it('isInRange...' instead of 'it(functions...').   
-      [ ] correct syntax for 'throw error "NaN" if "num" is not a number.'
+4.  [ ] isInRange:
+ a.   [x] for 'expect(' statements reference module import by using 'app.isInRange', rather than 'isInRange'.
+ b.   [x] for 'it' statements: replace references to 'functions' with target function names (i.e. 'it('isInRange...' instead of 'it(functions...').   
+ c.   [ ] correct syntax for 'throw error "NaN" if "num" is not a number.'
 
-  [ ] isTenOrFive:
-      [x] in 'expect(...' add 'app.' prefix to function names.
-      [ ] add test for unexpected input.
+5.  [ ] isTenOrFive:
+ a.   [x] in 'expect(...' add 'app.' prefix to function names.
+ b.   [ ] add test for unexpected input.
 
   [ ] 
   [ ]
