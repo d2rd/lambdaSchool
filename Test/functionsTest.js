@@ -40,10 +40,9 @@ describe('app.isInRange',function(){
     /* 
       bds: nice to test unexpected input. However, this is not how chai works for detecting when error are thrown. Try googling "chai expect to throw error"
     */
-    expect.isNumber(app.isInRange('three'))._.isNumber(value);
-  }),
-
-
+    // expect.isNumber(app.isInRange('three'))._.isNumber(value);
+  });
+});
 
 //isPrime - Return true if num is prime, otherwise return false.
 describe('isPrime returns true if num is prime, otherwise return false.',function(){
@@ -57,6 +56,7 @@ describe('isPrime returns true if num is prime, otherwise return false.',functio
   it('isPrime should throw error "NaN" if "num" is not a number.', function(){
       expect(isPrime('foo', 'this is not a number')).to.equal.NaN;
     });
+});
 
 //isTenOrFive -
 // bds: better use of the describe string here to categorize the tests
@@ -98,15 +98,11 @@ describe('addItemToArray adds an element to the end of "arr" then returns the ar
       bds: this is a good thing to test; however, because arr gets changed in the course of running the function, you'll have to store the value of arr.length before running the function, to have it available to compare to after running the function.
     */
     expect(app.addItemToArray(arr)).to.have.lengthOf(arr.length + 1);
-});
+  });
 
   it('addItemToArray should throw error "this object is not an array" if not an array', function(){
     expect(app.addItemToArray(arr,'this object is not an array')).to.be.an(array);
   });
-
-  // it('addItemToArray should add the item 'apple' to the array ['coconut', 'peach', 'kiwi'] updated array should be ['coconut', 'peach', 'kiwi', 'apple']);')
-
-  // it('addItemToArray should add the item 'boat' to the array ['car', 'truck', 'motorcycle'] updated array should be ['car', 'truck', 'motorcycle', 'boat']);')
 
 /* 
   bds: I see these tests are not complete -- I won't comment on the incomplete tests. :-)
@@ -117,6 +113,12 @@ describe('addItemToArray adds an element to the end of "arr" then returns the ar
     expect(app.addItemToArray(arr[arr.length + 1]), 'expected new element to be null.').toBeNull(); //expect added element to be null. 
     //?? figure out syntax to pass new element key as parameter to specifically navigate to it.
   });
+/*TODO
+  it('addItemToArray should add the item 'apple' to the array ['coconut', 'peach', 'kiwi'] updated array should be ['coconut', 'peach', 'kiwi', 'apple']);')
+
+  it('addItemToArray should add the item 'boat' to the array ['car', 'truck', 'motorcycle'] updated array should be ['car', 'truck', 'motorcycle', 'boat']);')
+*/
+});
 
 /*
   MODEL  https://facebook.github.io/jest/docs/en/expect.html#tobenull
@@ -161,4 +163,3 @@ describe('addItemToArray adds an element to the end of "arr" then returns the ar
   [ ]
   [ ]
   */
-  mustard seed church, san jose

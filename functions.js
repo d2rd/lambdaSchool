@@ -19,7 +19,7 @@ if (num < 50 && num > 20) {
 } else {
   return(false);
 }
-}
+};
 
 /*   bds:  this file should not be running functions; its purpose is only to declare functions.
 gdd: DONE
@@ -36,7 +36,7 @@ function isPrime(num) {
   /*   bds:  it's not necessary to compare the number to 1 here; you've already returned false if the number is 1 from the first conditional in this function. It would suffice to return true here.
   */
   return num !== 1;
-}
+};
   // console.log(isprime(37));
   //tests
 
@@ -57,7 +57,7 @@ function isPrime(num) {
     // false
 
 
-function isTenOrFive(num) {
+// function isTenOrFive(num) {
 
   /*   bds:  remove the console.log for finished work
   console.log(num === 5 || num === 10); //for test results
@@ -80,7 +80,7 @@ isTenOrFive(10);
 */
 function isTenOrFive(num) {
   return num === 10 || num === 5;
-}
+};
 
 //addItemToArray
     // Add item to the end of arr and return the array.
@@ -102,7 +102,7 @@ function addItemToArray(arr, item) {
   var arrLength = arr.length;
   arr.push(item);
   return(arr);
-}
+};
 
 /*   bds:  remove this for finished work */
 
