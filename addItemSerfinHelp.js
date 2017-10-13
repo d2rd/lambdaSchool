@@ -88,46 +88,35 @@ describe('isTenOrFive', function(){  // describe is from mocha
 
 //addItemToArray - Add item to the end of arr and return the array.
 describe('addItemToArray adds an element to the end of "arr" then returns the array.', function(){
-  const arr = ['brand', 'numberOfStrings', 'color']; //bass collection
-  //testing if functions.lines 114-116 work by passing in junk argument to throw false.
+  const arr = ['car', 'truck', 'motorcycle'];
   it('addItemToArray should return an array', function(){  //?? is this a duplicate of it#1?
-    expect(app.addItemToArray("junkString",'dollarValue'),'this is not an array').to.be.false;
+    expect(app.addItemToArray(arr,'boat')).to.be.true;
   });
 
-  /* do test to pass BOTH arguments
-      expect(app.addItemToArray(arr,'dollarValue')).to.be.false;
-  });
-      expect(app.addItemToArray(arr,'dollarValue') 'this object is not an array').to.be.false;
-  */
   it('addItemToArray should be have more elements after running than when invoked.', function(){
     /* 
       bds: this is a good thing to test; however, because arr gets changed in the course of running the function, you'll have to store the value of arr.length before running the function, to have it available to compare to after running the function.
     */
-    let arrLength = arr.length;  // store length of input array for later comparison.  Originally put this statement in functions.js which was misguided.
-    expect(app.addItemToArray(arr,'dollarValue')).to.have.lengthOf(arrLength + 1);
+    expect(app.addItemToArray(arr)).to.have.lengthOf(arr.length + 1);
   });
 
   // it('addItemToArray should throw error "this object is not an array" if not an array', function(){
   //   expect(app.addItemToArray(arr,'this object is not an array')).to.be.an(array);
   // });
-//addProperty
-//WRITE NEW TEST HERE
 
 /* 
   bds: I see these tests are not complete -- I won't comment on the incomplete tests. :-)
 */
-//THIS IS NOT A VALID TEST FOR THIS FUNCTION IT SHOULD BE MOVED TO 'addProperty'
-  // it('addItemToArray should include new element with a value of "null"', function(){
-  //   // expect(app.addItemToArray(arr)).to..)
-  //   expect(app.addItemToArray(arr,'dollarValue')[arr.length + 1], 'expected new element to be null.').to.be.null; //expect added element to be null. 
-  //   //?? figure out syntax to pass new element key as parameter to specifically navigate to it.
-  // });
 
-
+  it('addItemToArray should include new element with a value of "null"', function(){
+    // expect(app.addItemToArray(arr)).to..)
+    expect(app.addItemToArray(arr[arr.length + 1]), 'expected new element to be null.').to.be.null; //expect added element to be null. 
+    //?? figure out syntax to pass new element key as parameter to specifically navigate to it.
+  });
 /*TODO
   it('addItemToArray should add the item 'apple' to the array ['coconut', 'peach', 'kiwi'] updated array should be ['coconut', 'peach', 'kiwi', 'apple']);')
 
-  it('addItemToArray should add the item 'dollarValue' to the array ['car', 'truck', 'motorcycle'] updated array should be ['car', 'truck', 'motorcycle', 'dollarValue']);')
+  it('addItemToArray should add the item 'boat' to the array ['car', 'truck', 'motorcycle'] updated array should be ['car', 'truck', 'motorcycle', 'boat']);')
 */
 });
 
@@ -153,7 +142,7 @@ describe('addItemToArray adds an element to the end of "arr" then returns the ar
  d.   [x] add error message if object type is not an array.
  e.   [x] remove test command invoking function from finished work.
  f.   [ ] add new element 'apple' to test array ['coconut', 'peach', 'kiwi']
- g.   [ ] add new element 'dollarValue' to test array ['car', 'truck', 'motorcycle']  
+ g.   [ ] add new element 'boat' to test array ['car', 'truck', 'motorcycle']  
 
 4.  [ ] isInRange:
  a.   [x] for 'expect(' statements reference module import by using 'app.isInRange', rather than 'isInRange'.

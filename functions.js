@@ -14,19 +14,27 @@
    bds:  Since you want to return true if (num < 50 && num > 20) is true, and false if (num < 50 && num > 20) is false, you can replace the whole conditional (if-then-else) with returning the boolean expression: "return (num < 50 && num > 20)" You used this technique well in isTenOrFive
 */
 function isInRange(num) {
-if (num < 50 && num > 20) {
-  return(true);
-} else {
-  return(false);
-}
-};
+  if(typeof num !== 'number') {
+    return NaN
+  }
 
+  if (num < 50 && num > 20) {
+    return true;
+  } else {
+    return false;
+  }
+};
+    // expect(outputForSeven).to.be.lessThan(50);
 /*   bds:  this file should not be running functions; its purpose is only to declare functions.
 gdd: DONE
 */
 
 //isPrime
 function isPrime(num) {
+  if(typeof num !== 'number') {
+    return NaN;
+  }
+
   if (num === 0 || num === 1){
     return false;
   }
@@ -99,17 +107,36 @@ function isTenOrFive(num) {
 
 
 function addItemToArray(arr, item) {
-  var arrLength = arr.length;
+  console.log(arr.constructor, typeof arr);
+  // if(typeof arr !== 'array') {
+  //   return false;
+  // }
+    if(arr.constructor !== Array){  // is it's constructor not equal to the array object built-in to JS?
+    return false;
+  } 
   arr.push(item);
   return(arr);
 };
 
 /*   bds:  remove this for finished work */
 
+//addProperty
+let bassGuitars = {
+    brand : "Fender",
+    stringCount : 4,
+    color : "Blue"
+};
+function addProperty(object, property) {
+  object[property] = null;
+  console.log(object);
+  return object;
+}
+addProperty(bassGuitars, "dollarValue");
 
 
 
-module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray}
+
+module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty}
 
 
 /* TASKS
