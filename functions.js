@@ -17,13 +17,10 @@ function isInRange(num) {
   if(typeof num !== 'number') {
     return NaN
   }
-
-  if (num < 50 && num > 20) {
-    return true;
-  } else {
-    return false;
-  }
-};
+  console.log(num < 50 && num > 20); 
+  return (num < 50 && num > 20);
+ 
+}
     // expect(outputForSeven).to.be.lessThan(50);
 /*   bds:  this file should not be running functions; its purpose is only to declare functions.
 gdd: DONE
@@ -121,17 +118,13 @@ function addItemToArray(arr, item) {
 /*   bds:  remove this for finished work */
 
 //addProperty
-let bassGuitars = {
-    brand : "Fender",
-    stringCount : 4,
-    color : "Blue"
-};
-function addProperty(object, property) {
-  object[property] = null;
-  console.log(object);
-  return object;
+
+function addProperty(obj, property) {
+  obj[property] = null;
+  console.log(obj);
+  return obj;
 }
-addProperty(bassGuitars, "dollarValue");
+
 
 
 
@@ -141,12 +134,12 @@ module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty}
 
 /* TASKS
   [x] install eslint
-  [ ] remove run commands from functions.js
-  [ ] remove test statements from functions.js
-  [ ] isInRange:  replace the whole conditional (if-then-else) with returning the boolean expression: "return (num < 50 && num > 20)" 
+  [x] remove run commands from functions.js
+  [x] remove test statements from functions.js
+  [x] isInRange:  replace the whole conditional (if-then-else) with returning the boolean expression: "return (num < 50 && num > 20)" 
   [x] isInRange: remove function call 
-  [ ]
-  [ ]
+  [ ] remove all bds comments
+  [ ] remove all 'note to self' comments
   [ ]
   [ ]
   [ ]
