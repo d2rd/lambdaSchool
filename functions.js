@@ -1,7 +1,4 @@
 //isInRange
-/*
-   bds:  Since you want to return true if (num < 50 && num > 20) is true, and false if (num < 50 && num > 20) is false, you can replace the whole conditional (if-then-else) with returning the boolean expression: "return (num < 50 && num > 20)" You used this technique well in isTenOrFive
-*/
 function isInRange(num) {
   if(typeof num !== 'number') {
     return NaN
@@ -10,10 +7,6 @@ function isInRange(num) {
   return (num < 50 && num > 20);
  
 }
-    // expect(outputForSeven).to.be.lessThan(50);
-/*   bds:  this file should not be running functions; its purpose is only to declare functions.
-gdd: DONE
-*/
 
 //isPrime
 function isPrime(num) {
@@ -27,12 +20,8 @@ function isPrime(num) {
   for(var i = 2; i < num; i++)
     if(num % i === 0) return false;
 
-  /*   bds:  it's not necessary to compare the number to 1 here; you've already returned false if the number is 1 from the first conditional in this function. It would suffice to return true here.
-  */
-  return num !== 1;
+ return num !== 1;
 };
-  // console.log(isprime(37));
-  //tests
 
 //isTenOrFive
     // Return true if num is 10 or 5.
@@ -50,53 +39,30 @@ function isPrime(num) {
     // true
     // false
 
-
-// function isTenOrFive(num) {
-
-  /*   bds:  remove the console.log for finished work
-  console.log(num === 5 || num === 10); //for test results
-
-     bds:  this is a great example of returning the boolean expression rather than
-     bds:  using a conditional
-  return (num === 5 || num === 10);
-}
-
-/*   bds:  these should be moved to the tests file.
-//tests
-isTenOrFive(10);
-isTenOrFive(22);
-isTenOrFive(5);
-isTenOrFive(10);
-
-// model solution
-   bds:  here you've redefined isTenOrFive. Make sure you have only one definition
-   bds:  in finished work.
-*/
 function isTenOrFive(num) {
   return num === 10 || num === 5;
 };
 
 //addItemToArray
-    // Add item to the end of arr and return the array.
+/* Add item to the end of arr and return the array.
 
-    // Input Example:
+    Input Example:
 
-    // [1, 2, 3], 4
-    // [true], false
-    // ['Hello'], 'world!'
+    [1, 2, 3], 4
+    [true], false
+    ['Hello'], 'world!'
 
-    // Output Example:
+    Output Example:
 
-    // [1, 2, 3, 4]
-    // [true, false]
-    // ['Hello', 'world!']
+    [1, 2, 3, 4]
+    [true, false]
+    ['Hello', 'world!']
+*/
 
 function addItemToArray(arr, item) {
   console.log(arr.constructor, typeof arr);
-  // if(typeof arr !== 'array') {
-  //   return false;
-  // }
-    if(arr.constructor !== Array){  // is it's constructor not equal to the array object built-in to JS?
+  
+  if(arr.constructor !== Array){  // is it's constructor not equal to the array object built-in to JS?
     return false;
   } 
   arr.push(item);
@@ -126,7 +92,9 @@ function fizzBuzz(num) {
 }
 
 //nameProps
-// Write a function nameProps(obj) that returns the names of the properties an object has in alphabetical order. Ignore symbolic properties and count only the "own properties" (not inherited) of the object.
+/*
+ Write a function nameProps(obj) that returns the names of the properties an object has in alphabetical order. Ignore symbolic properties and count only the "own properties" (not inherited) of the object.
+*/
 const obj = {
     "id": 1,
     "rep_name": "Xymenes Dewer",
@@ -164,7 +132,9 @@ const obj = {
   // }
 
 //showMonth
-// Write a function month(date) to find the month for a given Date object, returning the name of the month as a string ('January', 'February', 'March', 'April', 'May', ... etc).
+/* 
+Write a function month(date) to find the month for a given Date object, returning the name of the month as a string ('January', 'February', 'March', 'April', 'May', ... etc).
+*/
 
 const calendar = [
   {
@@ -236,14 +206,7 @@ month();
 module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth}
 
 /* TASKS
-  [x] install eslint
-  [x] remove run commands from functions.js
-  [x] remove test statements from functions.js
-  [x] isInRange:  replace the whole conditional (if-then-else) with returning the boolean expression: "return (num < 50 && num > 20)" 
-  [x] isInRange: remove function call 
-  [x] remove all bds comments
-  [x] remove all 'note to self' comments
-  [ ]
+  [ ] Cleanup old code from added functions (addProperty, fizzBuzz, nameProps, showMonth)
   [ ]
   [ ]
   [ ]
