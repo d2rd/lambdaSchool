@@ -66,6 +66,43 @@ describe('addItemToArray adds an element to the end of "arr" then returns the ar
 
 });
 
+//PART 2 ADDED 10/16/2017
+
+//addProperty
+describe('addProperty adds a new property to "obj".  The new property should have a value of null.', function(){
+  
+  let obj = {
+    brand : "Fender",
+    stringCount : 4,
+    color : "Blue"
+};
+  
+it('addProperty should have more properties after running than when invoked.', function(){
+    
+    let objLength = obj.length;  // store length of input array for later comparison.  Originally put this statement in functions.js which was misguided.
+    expect(app.addProperty(obj,'dollarValue')).to.have.lengthOf(objLength + 1);
+  });
+
+it('addProperty should have a length equal to original length + 1', function(){  
+    expect(app.addProperty(obj,'dollarValue')).to.be.false;
+  });
+});  
+
+
+//fizzBuzz
+  /*
+    fizzBuzz(21);
+    fizzBuzz(6);
+    fizzBuzz(10);
+    fizzBuzz(15);
+    fizzBuzz(7);
+  */
+
+
+//nameProps
+// Write a function nameProps(obj) that returns the names of the properties an object has in alphabetical order. Ignore symbolic properties and count only the "own properties" (not inherited) of the object.
+
+
 /* TASKS
 1.  [x] replace 'functions' module references with 'app'
 2.  [x] parens are closed before the '.to'
