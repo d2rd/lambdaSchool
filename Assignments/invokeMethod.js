@@ -10,5 +10,8 @@ Input Example:
 */
 
 function invokeMethod(object, method) {
-  // code here
+
+  object[method]()
 }
+
+

@@ -1,113 +1,101 @@
-const mocha = require('mocha');
+const mocha = require('mocha'); // do you ever use the variable 'mocha'?
 const chai = require('chai');
 const expect = chai.expect;
-/*
-const assert = chai.assert
-const { assert, expect } = require('chai') //es6 shortcut chai is the library assert/expect are methods in the library.
 
-const expect = require('chai').expect; // preference is to use the expect method
-const assert = chai').assert;
-*/
+// bds: also lots here that doesn't pass ESLint
 
-// bds: did you run these tests? When I ran them, I got zero passing
+const app = require('../functions'); //declares 'app' asLooks for functions outside the test folder
 
-const app = require('../functions'); //Looks for functions outside the test folder
 
-//isInRange - return true if num is less than 50 and greater than 20.
-// bds: the string argument for describe should be a specific description for
-// bds: this set of tests. 'isInRange' would be a better descriptor here than
-// bds: 'functions'
-describe('functions',function(){
-  it('functions should return true if num is <50.', function(){
-    // bds: here, you need to reference your import
-    // bds: use app.isInRange, rather than isInRange
-
-    // bds: Also, you need to test the output of the function. What data type
-    // bds: does isInRange return? What data type are you comparing the output to here?
-    expect(isInRange(7)).to.be.lessThan(50);
+describe('isInRange return true if num is less than 50 and greater than 20.',function(){
+  it('isInRange should return false if num is >50.', function(){
+    expect(app.isInRange(7)).to.be.false;
   }),
 
-  it('functions should return true if num is >20.', function(){
-      expect(isInRange(22).to.be.above(20));
+  it('isInRange should return true if num is >20.', function(){
+    expect(app.isInRange(22)).to.be.true;
     }),
 
-  it('functions should throw error "NaN" if "num" is not a number.', function(){
-
-    // bds: nice to test unexpected input. However, this is not how chai works
-    // bds: for detecting when error are thrown. Try googling "chai expect to throw error"
-    expect(isInRange('three').to.NaN);
-  }),
-
-
+// bds: in this case it's not throwing an error, but simply returning a value.
+// bds: See https://www.w3schools.com/jsref/jsref_throw.asp for throwing errors.
+// bds: You will also need to test differently.
+  it('isInRange should throw error "NaN" if "num" is not a number.', function(){
+    expect(app.isInRange('name')).to.be.NaN
+  });
+});
 
 //isPrime - Return true if num is prime, otherwise return false.
-describe('functions',function(){
-  it('functions.isPrime() should return true if num is prime.', function(){
-    // bds: watch your parentheses here. You want to make sure the expect value
-    // bds: parens are closed before the .to
-    // bds: expect(app.isPrime(2)).to.equal(true)
-    expect(isPrime(2).to.equal(true));
+describe('isPrime returns true if num is prime, otherwise return false.',function(){
+  it('isPrime should return true if num is prime.', function(){
+
+    expect(app.isPrime(2)).to.be.true;
   });
 
-  it('functions.isPrime() should throw error "NaN" if "num" is not a number.', function(){
-      expect(isPrime('foo', 'this is not a number').to.equal.NaN);
+  it('isPrime should throw error "NaN" if "num" is not a number.', function(){
+      expect(app.isPrime('foo', 'this is not a number')).to.be.NaN;
     });
-
 });
 
 //isTenOrFive -
-// bds: better use of the describe string here to categorize the tests
 describe('isTenOrFive', function(){  // describe is from mocha
-
-  // bds: the string argument here doesn't need functions.isTenOrFive(), since
-  // bds: that's in the describe. Use 'should return true if num === 5' instead
-  it('functions.isTenOrFive() should return true if num === 5', function(){
-
-    // bds: I believe this test would work if you used "app.isTenOrFive" instead
-    // bds: of "isTenOrFive"
-    expect(isTenOrFive(5)).to.equal(true); //assertion from chai
+  it('isTenOrFive should return true if num === 5', function(){
+    expect(app.isTenOrFive(5)).to.be.true; //assertion from chai
   });
 
-  it('functions.isTenOrFive() should throw error if num !=== 5', function(){
-    expect(isTenOrFive(7)).to.equal(false);
+// bds: this description is not entirely accurate -- if the number is 10, it isn't 5, and it should return true
+  it('isTenOrFive should throw error if num !=== 5', function(){
+    // bds: again, this is not throwing an error.
+    expect(app.isTenOrFive(7)).to.be.false;
   });
 
-  it('functions.isTenOrFive() should return true if num === 10', function(){
-    expect(isTenOrFive(10)).to.equal(true);
+  it('isTenOrFive should return true if num === 10', function(){
+    expect(app.isTenOrFive(10)).to.be.true;
   });
 
-  it('functions.isTenOrFive() should throw error if num !=== 10', function(){
-    expect(isTenOrFive(15)).to.equal(false);
+  it('isTenOrFive should throw error if num !=== 10', function(){
+    // bds: see notes above about throwing errors
+    expect(app.isTenOrFive(15)).to.be.false;
   });
 
-  // bds: unexpected input?
 });
 
 
 //addItemToArray - Add item to the end of arr and return the array.
-describe('addItemToArray', function(){
-
-  it('functions.addItemToArray() should return an array', function(){  //?? is this a duplicate of it#1?
-    expect(addItemToArray(arr)).to.be.an(array);
+describe('addItemToArray adds an element to the end of "arr" then returns the array.', function(){
+  const arr = ['coconut', 'peach', 'kiwi'];
+  it('addItemToArray should return an array', function(){
+    // bds: this test doesn't match the description 'addItemToArray should return an array'
+    expect(app.addItemToArray("junkString",'apple'),'this is not an array').to.be.false;
   });
 
-  it('functions.addItemToArray() should be have more elements after running than when invoked.', function(){
-    // bds: this is a good thing to test; however, because arr gets changed in
-    // bds: the course of running the function, you'll have to store the value
-    // bds: of arr.length before running the function, to have it available to
-    // bds: compare to after running the function.
-    expect(addItemToArray(arr).to.have.lengthOf(arr.length + 1), ___________);
+  it('addItemToArray should have more elements after running than when invoked.', function(){
+    // bds: this should use const, not let, since the value doeesn't change.
+    // bds: a better variable name here would be 'initialLength' or 'startLength'
+    let objLength = arr.length;  // store length of input array for later comparison.  Originally put this statement in functions.js which was misguided.
+    expect(app.addItemToArray(arr,'apple')).to.have.lengthOf(objLength + 1);
   });
 
-  it('functions.addItemToArray(arr) should throw error ___ if not an array', function(){
-    expect(addItemToArray(arr), ___________);
-  });
+});
 
-  // bds: I see these tests are not complete -- I won't comment on the incomplete
-  // bds tests. :-)
+/* TASKS
+1.  [x] replace 'functions' module references with 'app'
+2.  [x] parens are closed before the '.to'
 
-  // it('functions.addItemToArray(arr) should include new element with a value of null', function(){
-  //   expect(addItemToArray(arr).to..)
-  // })
-  });
-})
+3.  [x] addItemToArray:
+3a.   [x] for 'it' statements: replace references to 'functions' with target function name (i.e. 'it('addItemToArray...' instead of 'it(functions...').
+ b.   [x] store the value of arr.length before running the function.
+ c.   [x] complete test for 'value of null' see comments in functions.js
+ d.   [x] add error message if object type is not an array.
+ e.   [x] remove test command invoking function from finished work.
+ f.   [x] add new element 'apple' to test array ['coconut', 'peach', 'kiwi']
+
+4.  [x] isInRange:
+ a.   [x] for 'expect(' statements reference module import by using 'app.isInRange', rather than 'isInRange'.
+ b.   [x] for 'it' statements: replace references to 'functions' with target function names (i.e. 'it('isInRange...' instead of 'it(functions...').
+ c.   [x] correct syntax for 'throw error "NaN" if "num" is not a number.'
+
+5.  [x] isTenOrFive:
+ a.   [x] in 'expect(...' add 'app.' prefix to function names.
+ b.   [x] add test for unexpected input.
+
+  */
