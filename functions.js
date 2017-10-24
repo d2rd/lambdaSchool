@@ -7,6 +7,7 @@ function isInRange(num) {
   return (num < 50 && num > 20);
  
 }
+/*-----*/
 
 //isPrime
 function isPrime(num) {
@@ -17,11 +18,12 @@ function isPrime(num) {
   if (num === 0 || num === 1){
     return false;
   }
-  for(var i = 2; i < num; i++)
+  for(let i = 2; i < num; i++)
     if(num % i === 0) return false;
 
  return num !== 1;
 };
+/*-----*/
 
 //isTenOrFive
     // Return true if num is 10 or 5.
@@ -42,6 +44,7 @@ function isPrime(num) {
 function isTenOrFive(num) {
   return num === 10 || num === 5;
 };
+/*-----*/
 
 //addItemToArray
 /* Add item to the end of arr and return the array.
@@ -68,14 +71,17 @@ function addItemToArray(arr, item) {
   arr.push(item);
   return(arr);
 };
+/*-----*/
 
 //PART 2 ADDED 10/16/2017
 //addProperty
+
 function addProperty(obj, property) {
   obj[property] = null;
   console.log(obj);
   return obj;
 }
+/*-----*/
 
 //fizzBuzz
 function fizzBuzz(num) {
@@ -90,6 +96,7 @@ function fizzBuzz(num) {
   return 'buzz' ;
 } else return num ;
 }
+/*-----*/
 
 //nameProps
 /*
@@ -130,53 +137,50 @@ const obj = {
   //   k = keys[i];
   //   console.log(k + ':' + Obj[k]);
   // }
+/*-----*/
 
 //showMonth
 /* 
 Write a function month(date) to find the month for a given Date object, returning the name of the month as a string ('January', 'February', 'March', 'April', 'May', ... etc).
 */
-
 const calendar = [
-  {
-    "monthNumber": "1",
-    "monthName"  : "January",
-    "monthNumber": "2",
-    "monthName"  : "February",
-    "monthNumber": "3",
-    "monthName"  : "March",
-    "monthNumber": "4",
-    "monthName"  : "April",
-    "monthNumber": "5",
-    "monthName"  : "May",
-    "monthNumber": "8",
-    "monthName"  : "June",
-    "monthNumber": "7",
-    "monthName"  : "July",
-    "monthNumber": "8",
-    "monthName"  : "August",
-    "monthNumber": "9",
-    "monthName"  : "September",
-    "monthNumber": "10",
-    "monthName"  : "October",
-    "monthNumber": "11",
-    "monthName"  : "November",
-    "monthNumber": "12",
-    "monthName"  : "December"
-  }
+    {monthNumber: 1,
+    monthName  : "January"},
+    {monthNumber: 2,
+    monthName  : "February"},
+    {monthNumber: 3,
+    monthName  : "March"},
+    {monthNumber: 4,
+    monthName  : "April"},
+    {monthNumber: 5,
+    monthName  : "May"},
+    {monthNumber: 6,
+    monthName  : "June"},
+    {monthNumber: 7,
+    monthName  : "July"},
+    {monthNumber: 8,
+    monthName  : "August"},
+    {monthNumber: 9,
+    monthName  : "September"},
+    {monthNumber: 10,
+    monthName  : "October"},
+    {monthNumber: 11,
+    monthName  : "November"},
+    {monthNumber: 12,
+    monthName  : "December"}
   ]
 
-function month(dateInput){
-  // var dateInput = prompt("Please enter a date","mm/dd/yyyy");
-  var dateInput = process.argv[2];
-  console.log(dateInput);
+function showMonth(dateInput){
+  // let dateInput = prompt("Please enter a date","mm/dd/yyyy");
+    let dateInput = process.argv[2];
+    console.log(dateInput);
 
   //split dateInput into array.
     dateInputArray = dateInput.split("/");
     console.log(dateInputArray);
 
   //extract month digits from dateInput
-
-  var getMonth = function (dateInputArray) { 
+    let getMonth = function (dateInputArray) { 
     if (dateInputArray[0] >= 1 || dateInputArray[0] <= 12) {
     console.log('the month is ' + getMonth);
           return console.log('this is a valid month');
@@ -198,12 +202,47 @@ function month(dateInput){
       }
   }
 
-month();
+showMonth();
 // getMonth();
 // let dateInput = new Date(2017, 6, 19) // June 19, 2017
-// month(dateInput) // returns "June"
+// showMonth(dateInput) // returns "June"
 
-module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth}
+/*-----*/
+//addFriend
+
+let userObj = [
+  {
+    'name'    :'Samuel', 
+    'friends' :[]
+  },
+  {
+    'name'    : 'Ralph', 
+    'friends' : []
+  },
+  {
+    'name'    : 'Annie',
+    'friends' : []
+  }
+];
+function addFriend(user, newFriend)  {
+  let i = '';
+	for (let i = 0; i < userObj.length; i++){
+		if ( userObj[i].name === user ) {
+				userObj[i].friends.push(newFriend)
+		}
+	}
+	return userObj[i];
+}
+/* move to functions.Test
+//tests
+addFriend("Samuel","Ralph");
+addFriend('Annie','Ralph');
+userObj;
+*/
+/*-----*/
+
+
+module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth, addFriend}
 
 /* TASKS
   [ ] Cleanup old code from added functions (addProperty, fizzBuzz, nameProps, showMonth)
