@@ -86,8 +86,8 @@ function addProperty(obj, property) {
 //fizzBuzz
 function fizzBuzz(num) {
  if (num % 3 === 0 && num % 5 === 0){ 
-   console.log('fizzbuzz') // for testing
-   return 'fizzbuzz' ;
+   console.log(fizzBuzz) // for testing
+   return fizzBuzz ;
 } else if (num % 3 === 0){
    console.log('fizz') // for testing
   return 'fizz' ;
@@ -103,40 +103,41 @@ function fizzBuzz(num) {
  Write a function nameProps(obj) that returns the names of the properties an object has in alphabetical order. Ignore symbolic properties and count only the "own properties" (not inherited) of the object.
 */
 const obj = {
-    "id": 1,
-    "rep_name": "Xymenes Dewer",
-    "email": "xymenes.dewer@somewhere.com",
-    "company": "Beahan, Swift and Hoppe",
-    "no_employees": 742,
-    "phone": "1-(863)994-6147",
-    "fax": "1-(555)123-4567",
-    "city": "Lakeland",
-    "state": "Florida",
-    "created_at": "11/4/2003"
-  };
+              id : 1,
+              rep_name : "Xymenes Dewer",
+              email : "xymenes.dewer@somewhere.com",
+              company : "Beahan, Swift and Hoppe",
+              no_employees : 742,
+              phone : "1-(863)994-6147",
+              fax : "1-(555)123-4567",
+              city : "Lakeland",
+              state : "Florida",
+              created_at : "11/4/2003"
+            };
 
     // attribution:  https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key
+    function nameProps(obj){
     keys = Object.keys(obj), // extracts keys from object to new array 'keys'
 
-    // to return an object with sorted keys use the line below.
-    i, len = keys.length;  // declares empty variable 'i' and declares 2nd var 'len' and assigns value of length of 'keys' array.
+    // // to return an object with sorted keys use the line below.
+    // i, len = keys.length;  // declares empty variable 'i' and declares 2nd var 'len' and assigns value of length of 'keys' array.
 
   //choose one:
       // keys.sort().forEach(key => console.log(key));  // ES6 syntax
       keys.sort().forEach(function(key){console.log(key)});
   // console.log(keys);
   // Display keys from 'obj' in the console
-  // for(var key in obj){
-  //   if(obj.hasOwnProperty(key)) {
-  //     console.log(key);
-  //   }
-  // }
+  for(var key in obj){
+    if(obj.hasOwnProperty(key)) {
+      console.log(key);
+    }
+  }
 
 
-  // for (i = 0; i < len; i++) {
-  //   k = keys[i];
-  //   console.log(k + ':' + Obj[k]);
-  // }
+  for (i = 0; i < len; i++) {
+    k = keys[i];
+    console.log(k + ':' + Obj[k]);
+  }
 /*-----*/
 
 //showMonth
@@ -170,7 +171,7 @@ const calendar = [
     monthName  : "December"}
   ]
 
-function showMonth(dateInput){
+function showMonth(date){
   // let dateInput = prompt("Please enter a date","mm/dd/yyyy");
     let dateInput = process.argv[2];
     console.log(dateInput);
@@ -187,8 +188,9 @@ function showMonth(dateInput){
       }
       else {
           return false;
-      }};
-};
+      }
+    };
+
 
   //match dateInput to monthNumber.
   
@@ -201,27 +203,21 @@ function showMonth(dateInput){
         }
       }
   }
+}
 
-showMonth();
-// getMonth();
-// let dateInput = new Date(2017, 6, 19) // June 19, 2017
-// showMonth(dateInput) // returns "June"
-
-/*-----*/
 //addFriend
-
-let userObj = [
+[
   {
-    'name'    :'Samuel', 
-    'friends' :[]
+    name    : "Samuel", 
+    friends :[]
   },
   {
-    'name'    : 'Ralph', 
-    'friends' : []
+    name    : "Ralph", 
+    friends : []
   },
   {
-    'name'    : 'Annie',
-    'friends' : []
+    name    : "Annie",
+    friends : []
   }
 ];
 function addFriend(user, newFriend)  {
@@ -241,10 +237,8 @@ userObj;
 */
 /*-----*/
 
-
-module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth, addFriend}
-
-/* TASKS
+/* 
+TASKS
   [ ] Cleanup old code from added functions (addProperty, fizzBuzz, nameProps, showMonth)
   [ ]
   [ ]
@@ -256,3 +250,5 @@ module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, 
   [ ]
   [ ]
 */
+
+module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth, addFriend}

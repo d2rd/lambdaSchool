@@ -1,4 +1,4 @@
-const mocha = require('mocha');
+var mocha = require('mocha');
 const chai = require('chai');
 const expect = chai.expect;
 
@@ -92,75 +92,75 @@ it('addProperty should have a length equal to original length + 1', function(){
 });  
 /*-----*/
 
-// sumArray
-/*
-Sum up all of the integers in the numbers array.
-Instead of returning the sum invoke cb and pass in the sum there.
-*/
-describe('sumArray sums up all of the integers in the numbers array, invokes callback and passes in the sum as an callback argument.', function(){
-  //declared objects/arrays
-  const numbers = [10, 20, 30];
+// // sumArray
+// /*
+// Sum up all of the integers in the numbers array.
+// Instead of returning the sum invoke cb and pass in the sum there.
+// */
+// describe('sumArray sums up all of the integers in the numbers array, invokes callback and passes in the sum as an callback argument.', function(){
+//   //declared objects/arrays
+//   const numbers = [10, 20, 30];
 
-  //tests to be executed
+//   //tests to be executed
 
-  it('sumArray [test criteria]', function(){
-      expect(app.sumArray([argumentToPass])).to.be.[expectedOutcome];
-    }),
+//   it('sumArray [test criteria]', function(){
+//       expect(app.sumArray([argumentToPass])).to.be.[expectedOutcome];
+//     }),
 
-  it('sumArray [test criteria]', function(){
-      expect(app.sumArray([argumentToPass])).to.be.[expectedOutcome];
-    }),
-});
+//   it('sumArray [test criteria]', function(){
+//       expect(app.sumArray([argumentToPass])).to.be.[expectedOutcome];
+//     }),
+// });
 
-function sumArray(numbers, cb) {
- let numbersSum = numbers.reduce((total, amount) => total + amount);
- cb = numbersSum;
- return cb;
-  // try to use the array reduce method to find the sum
-}
-// sumArray(numbers);
-/*-----*/
+// function sumArray(numbers, cb) {
+//  let numbersSum = numbers.reduce((total, amount) => total + amount);
+//  cb = numbersSum;
+//  return cb;
+//   // try to use the array reduce method to find the sum
+// }
+// // sumArray(numbers);
+// /*-----*/
 
 
 //fizzBuzz
-describe('fizBuzz')
-    fizzBuzz(21);
-    fizzBuzz(6);
-    fizzBuzz(10);
-    fizzBuzz(15);
-    fizzBuzz(7);
+// describe('fizBuzz')
+//     fizzBuzz(21);
+//     fizzBuzz(6);
+//     fizzBuzz(10);
+//     fizzBuzz(15);
+//     fizzBuzz(7);
   
 
 /*-----*/
 
 //nameProps
 // Write a function nameProps(obj) that returns the names of the properties an object has in alphabetical order. Ignore symbolic properties and count only the "own properties" (not inherited) of the object.
-describe('nameProps returns the names of the properties an object has in alphabetical order.')
-it()
-describe('[functionName] [what it does]', function(){
+describe('nameProps returns the names of the properties an object has in alphabetical order.', function(){
   //declared objects/arrays
     const obj = {
-    "id": 1,
-    "rep_name": "Xymenes Dewer",
-    "email": "xymenes.dewer@somewhere.com",
-    "company": "Beahan, Swift and Hoppe",
-    "no_employees": 742,
-    "phone": "1-(863)994-6147",
-    "fax": "1-(555)123-4567",
-    "city": "Lakeland",
-    "state": "Florida",
-    "created_at": "11/4/2003"
-  };
+                  id : 1,
+                  rep_name : "Xymenes Dewer",
+                  email : "xymenes.dewer@somewhere.com",
+                  company : "Beahan, Swift and Hoppe",
+                  no_employees : 742,
+                  phone : "1-(863)994-6147",
+                  fax : "1-(555)123-4567",
+                  city : "Lakeland",
+                  state : "Florida",
+                  created_at : "11/4/2003"
+                };
+
 
   //tests to be executed
-
-  it('[functionName] [test criteria]', function(){
-      expect(app.[functionName]([argumentToPass])).to.be.[expectedOutcome];
+it('app.nameProps() to be a function', function(){
+      expect(app.nameProps()).to.equal.prototype;
     }),
 
-  it('[functionName] [test criteria]', function(){
-      expect(app.[functionName]([argumentToPass])).to.be.[expectedOutcome];
+  it('nameProps list the properties of "obj" in alphabetical order', function(){
+      expect(app.nameProps(obj)).to.be.app.nameProps._.keys(obj);
     })
+
+  
 });
 /*-----*/
 //showMonth

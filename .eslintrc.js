@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": "airbnb",
     "rules": {
         "indent": [
             "error",

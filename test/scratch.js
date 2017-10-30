@@ -1,3 +1,4 @@
+/*
 describe('[functionName] [what it does]', function(){
   //declared objects/arrays
     //const = 
@@ -12,3 +13,4 @@ describe('[functionName] [what it does]', function(){
       expect(app.[functionName]([argumentToPass])).to.be.[expectedOutcome];
     }),
 });
+*/
