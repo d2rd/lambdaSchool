@@ -25,25 +25,26 @@ function isPrime(num) {
 };
 /*-----*/
 
+
 //isTenOrFive
-    // Return true if num is 10 or 5.
-    // Otherwise return false.
+  /*  Return true if num is 10 or 5.
+      Otherwise return false.
 
-    // Input Example:
+      Input Example:
+        5
+        10
+        7
 
-    // 5
-    // 10
-    // 7
+      Output Example:
+        true
+        true
+        false
+  */
 
-    // Output Example:
+  function isTenOrFive(num) {
+    return num === 10 || num === 5;
+  };
 
-    // true
-    // true
-    // false
-
-function isTenOrFive(num) {
-  return num === 10 || num === 5;
-};
 /*-----*/
 
 //addItemToArray
@@ -80,7 +81,7 @@ function addProperty(obj, property) {
   obj[property] = null;
   console.log(obj);
   return obj;
-}
+};
 /*-----*/
 
 //fizzBuzz
@@ -95,7 +96,7 @@ function fizzBuzz(num) {
    console.log('buzz') // for testing
   return 'buzz' ;
 } else return num ;
-}
+};
 /*-----*/
 
 //nameProps
@@ -116,8 +117,8 @@ const obj = {
             };
 
     // attribution:  https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key
-    function nameProps(obj){
-    keys = Object.keys(obj), // extracts keys from object to new array 'keys'
+function nameProps(obj){
+keys = Object.keys(obj), // extracts keys from object to new array 'keys'
 
     // // to return an object with sorted keys use the line below.
     // i, len = keys.length;  // declares empty variable 'i' and declares 2nd var 'len' and assigns value of length of 'keys' array.
@@ -134,10 +135,11 @@ const obj = {
   }
 
 
-  for (i = 0; i < len; i++) {
+  for (i = 0; i < length; i++) {
     k = keys[i];
     console.log(k + ':' + Obj[k]);
-  }
+  };
+}
 /*-----*/
 
 //showMonth
@@ -206,7 +208,7 @@ function showMonth(date){
 }
 
 //addFriend
-[
+const user = [
   {
     name    : "Samuel", 
     friends :[]
@@ -228,8 +230,8 @@ function addFriend(user, newFriend)  {
 		}
 	}
 	return userObj[i];
-}
-/* move to functions.Test
+};
+/* move to functionsTest
 //tests
 addFriend("Samuel","Ralph");
 addFriend('Annie','Ralph');
@@ -251,4 +253,4 @@ TASKS
   [ ]
 */
 
-module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth, addFriend}
+module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth, addFriend};
