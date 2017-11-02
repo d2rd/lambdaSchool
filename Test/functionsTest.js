@@ -3,10 +3,15 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const app = require('../functions'); //declares 'app' and looks for 'functions.js' outside the test folder
-console.log(app);  // displays functions that were actually imported.  REMOVE ON FINAL
+
+console.log(app);  //REMOVE ON FINAL  displays functions that were actually imported. 
 
 // //isInRange
 // describe('isInRange return true if num is less than 50 and greater than 20.',function(){
+  //   it('app.isInRange() should be a function', function(){
+   //   expect(app.isInRange).to.be.a('function');
+   // }),
+
 //   it('isInRange should return false if num is >50.', function(){
 //     expect(app.isInRange(7)).to.be.false;
 //   }),
@@ -23,6 +28,10 @@ console.log(app);  // displays functions that were actually imported.  REMOVE ON
 
 // //isPrime - Return true if num is prime, otherwise return false.
 // describe('isPrime returns true if num is prime, otherwise return false.',function(){
+  //   it('app.isPrime() should be a function', function(){
+   //   expect(app.isPrime).to.be.a('function');
+   // }),
+
 //   it('isPrime should return true if num is prime.', function(){
 
 //     expect(app.isPrime(2)).to.be.true;
@@ -36,6 +45,10 @@ console.log(app);  // displays functions that were actually imported.  REMOVE ON
 
 // //isTenOrFive -
 // describe('isTenOrFive', function(){  // describe is from mocha
+//   it('app.isTenOrFive() should be a function', function(){
+   //   expect(app.isTenOrFive).to.be.a('function');
+   // }),
+
 //   it('isTenOrFive should return true if num === 5', function(){
 //     expect(app.isTenOrFive(5)).to.be.true; //assertion from chai
 //   });
@@ -73,30 +86,33 @@ console.log(app);  // displays functions that were actually imported.  REMOVE ON
 //PART 2 ADDED 10/16/2017
 
 //addProperty
-describe('addProperty adds a new property to "obj".  The new property should have a value of null.', function(){
-  
-  let obj = {
-    brand : "Fender",
-    stringCount : 4,
-    color : "Blue"
-};
-  
-it('addProperty adds a new property to "obj" therefore, after invocation, "obj" should have a length equal to original length + 1', function(){
+    // describe('addProperty adds a new property to "obj".  The new property should have a value of null.', function(){
+      
+    //   let obj = {
+    //     brand : "Fender",
+    //     stringCount : 4,
+    //     color : "Blue"
+    // };
+   //   it('app.addProperty() should be a function', function(){
+   //   expect(app.addProperty).to.be.a('function');
+   // }),
 
-    app.addProperty(obj, 'dollarValue');
-    console.log('\nI AM HEREEEEEEEE \n\n', app.addProperty(obj, 'dollarValue'));  //REMOVE on FINAL
-    let objLength = Object.keys(obj).length;
-    expect(objLength).to.equal(4);
-  });
+    // it('addProperty adds a new property to "obj" therefore, after invocation, "obj" should have a length equal to original length + 1', function(){
+
+    //     app.addProperty(obj, 'dollarValue');
+    //     console.log('\nI AM HEREEEEEEEE \n\n', app.addProperty(obj, 'dollarValue'));  //REMOVE on FINAL
+    //     let objLength = Object.keys(obj).length;
+    //     expect(objLength).to.equal(4);
+    //   });
 
 
-it('addProperty should contain a new property that has a value of null.', function(){ 
-  //model  expect(null).to.be.a('null'); 
-    // expect(app.addProperty(obj,'dollarValue'))[3].to.be.a.null;
-    expect(obj.dollarValue).to.be.null;
-  });
-});  
-/*-----*/
+    // it('addProperty should contain a new property that has a value of null.', function(){ 
+    //   //model  expect(null).to.be.a('null'); 
+    //     // expect(app.addProperty(obj,'dollarValue'))[3].to.be.a.null;
+    //     expect(obj.dollarValue).to.be.null;
+    //   });
+    // });  
+    // /*-----*/
 
 // // // sumArray
 // // /*
@@ -108,6 +124,9 @@ it('addProperty should contain a new property that has a value of null.', functi
 // //   const numbers = [10, 20, 30];
 
 // //   //tests to be executed
+//   it('app.sumArray() should be a function', function(){
+   //   expect(app.sumArray).to.be.a('function');
+   // }),
 
 // //   it('sumArray [test criteria]', function(){
 // //       expect(app.sumArray([argumentToPass])).to.be.[expectedOutcome];
@@ -130,6 +149,11 @@ it('addProperty should contain a new property that has a value of null.', functi
 
 // //fizzBuzz
 // // describe('fizBuzz')
+//   it('app.fizzBuzz() should be a function', function(){
+   //   expect(app.fizzBuzz).to.be.a('function');
+   // }),
+
+
 // //     fizzBuzz(21);
 // //     fizzBuzz(6);
 // //     fizzBuzz(10);
@@ -155,17 +179,14 @@ describe('nameProps returns the names of the properties an object has in alphabe
                   state : "Florida",
                   created_at : "11/4/2003"
                 };
-
-
   //tests to be executed
-it('app.nameProps() to be a function', function(){
-      expect(app.nameProps()).to.equal.prototype;
-    }),
+    it('app.nameProps() to be a function', function(){
+          expect(app.nameProps).to.be.a('function');
+        }),
 
-  it('nameProps() list the properties of "obj" in alphabetical order', function(){
-      expect(app.nameProps(obj)).to.be.app.nameProps._.keys(obj);
-    })
-
+    it('nameProps() list the properties of "obj" in alphabetical order', function(){
+        expect(app.nameProps(obj)).to.be.have.ordered.members;
+      })
   
 });
 // /*-----*/

@@ -48,21 +48,20 @@ function isPrime(num) {
 /*-----*/
 
 //addItemToArray
-/* Add item to the end of arr and return the array.
+    /* Add item to the end of arr and return the array.
 
-    Input Example:
+        Input Example:
 
-    [1, 2, 3], 4
-    [true], false
-    ['Hello'], 'world!'
+        [1, 2, 3], 4
+        [true], false
+        ['Hello'], 'world!'
 
-    Output Example:
+        Output Example:
 
-    [1, 2, 3, 4]
-    [true, false]
-    ['Hello', 'world!']
-*/
-
+        [1, 2, 3, 4]
+        [true, false]
+        ['Hello', 'world!']
+    */
 function addItemToArray(arr, item) {
   console.log(arr.constructor, typeof arr);
   
@@ -103,43 +102,34 @@ function fizzBuzz(num) {
 /*
  Write a function nameProps(obj) that returns the names of the properties an object has in alphabetical order. Ignore symbolic properties and count only the "own properties" (not inherited) of the object.
 */
-const obj = {
-              id : 1,
-              rep_name : "Xymenes Dewer",
-              email : "xymenes.dewer@somewhere.com",
-              company : "Beahan, Swift and Hoppe",
-              no_employees : 742,
-              phone : "1-(863)994-6147",
-              fax : "1-(555)123-4567",
-              city : "Lakeland",
-              state : "Florida",
-              created_at : "11/4/2003"
-            };
 
     // attribution:  https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key
 function nameProps(obj){
-keys = Object.keys(obj), // extracts keys from object to new array 'keys'
-
+    keys = Object.keys(obj), // extracts keys from object to new array 'keys'
+    console.log(keys);
+    return keys.sort();
+    // console.log(keys);
+}
     // // to return an object with sorted keys use the line below.
     // i, len = keys.length;  // declares empty variable 'i' and declares 2nd var 'len' and assigns value of length of 'keys' array.
 
   //choose one:
       // keys.sort().forEach(key => console.log(key));  // ES6 syntax
-      keys.sort().forEach(function(key){console.log(key)});
-  // console.log(keys);
-  // Display keys from 'obj' in the console
-  for(var key in obj){
-    if(obj.hasOwnProperty(key)) {
-      console.log(key);
-    }
-  }
+     // keys.sort().forEach(function(key){console.log(key)});
+//   // console.log(keys);
+//   // Display keys from 'obj' in the console
+//   for(var key in obj){
+//     if(obj.hasOwnProperty(key)) {
+//       console.log(key);
+//     }
+//   }
 
 
-  for (i = 0; i < length; i++) {
-    k = keys[i];
-    console.log(k + ':' + Obj[k]);
-  };
-}
+//   for (i = 0; i < length; i++) {
+//     k = keys[i];
+//     console.log(k + ':' + Obj[k]);
+//   };
+// }
 /*-----*/
 
 //showMonth
@@ -253,4 +243,5 @@ TASKS
   [ ]
 */
 
-module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth, addFriend};
+module.exports = {isInRange, isPrime, isTenOrFive, addItemToArray, addProperty, fizzBuzz, nameProps, showMonth, addFriend}
+
